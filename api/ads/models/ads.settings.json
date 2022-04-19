@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ads",
+  "info": {
+    "name": "Ads",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "articles": {
+      "collection": "article",
+      "via": "ads",
+      "dominant": true
+    },
+    "location": {
+      "type": "enumeration",
+      "enum": [
+        "menu",
+        "headerpost",
+        "middlepost",
+        "keyword",
+        "video",
+        "footer",
+        "leftpost",
+        "rightpost",
+        "bottompost"
+      ]
+    },
+    "banner": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
